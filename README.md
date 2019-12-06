@@ -2,7 +2,7 @@
 
 ### Intro
 
-A little story about an Affect Effet plugin protected behind a license code check.
+A little story about an Affect Effect plugin protected behind a license code check.
 First of all, I won't provide any link to the AE project nor the place where I found the sources for obvious TOS reason.
 
 The idea is simple : I downloaded an After effect plugin which included a script to generate "locators" on a flat map.
