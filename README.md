@@ -26,7 +26,7 @@ But at the beginning of the file we can see `@JSXBIN@ES@2.0` ..
 
 JSXBIN is binary script created by ExtendScript Toolkit, a tool used to add extensions to Adobe Creative Suite applications.
 
-It's like JavaScript but kind of... different and obfuscated :D !
+It's like JavaScript but kind of... different and obfuscated :smiley: !
 
 There is an awesome post about reversing JSXBIN here : https://www.scip.ch/en/?labs.20140515
 Unfortunaly even if you understand everything that is said in the blog post, you'd still need to "decompile" the script.
@@ -37,11 +37,9 @@ But it was since DMCA'd by Adobe https://github.com/github/dmca/blob/1dc576384cd
 
 But thank god we are on the internet so it didn't take me long to find a mirror of the projet (I used this one https://github.com/codecopy/jsxbin-to-jsx-converter)
 
-Now the painfull part ... I needed to compile this project.
+Now the painfull part... I needed to compile this project. :sleeping:
 
-After few tries with VSCode and installing a million different versions of .NET I finally surrendered and downloaded Visual Studio.
-
-https://visualstudio.microsoft.com/vs/
+After few tries with VSCode and installing a million different versions of .NET I finally surrendered and downloaded Visual Studio https://visualstudio.microsoft.com/vs/.
 
 20Go and few hours later I am finally able to compile the project !
 
