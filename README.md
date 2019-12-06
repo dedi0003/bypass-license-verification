@@ -237,8 +237,6 @@ The server I created was called !
 
 In fact, only `check_license` was called, it didn't even need to call `verify`
 
-![I'm in](./images/final.png)
-
 And I'm in ! :tada: No more dialog, no more login form, just the fully working pluging ! :tada:
 
 Pretty neat, right ?
@@ -246,6 +244,8 @@ Pretty neat, right ?
 ### Conclusion
 
 By redirecting the traffic to my machine and by creating a webserver, I could easily bypass the license verification process.
+
+I believe this method could be applied to the vast majority of license verification plugin.
 
 Feel free to create an issue to comment this post, or provide an alternative method !
 
