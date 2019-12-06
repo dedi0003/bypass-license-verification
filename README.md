@@ -233,15 +233,20 @@ I'm now running the script for the 4th time and ...
 
 ![Server is called](./images/endpoint_called.png)
 
-The server I created was called and the endpoint returned what I asked it to return !
+The server I created was called !
 
 In fact, only `check_license` was called, it didn't even need to call `verify`
 
 ![I'm in](./images/final.png)
 
-And I'm in ! No more dialog, no more login form, just the fully working pluging !
+And I'm in ! :tada: No more dialog, no more login form, just the fully working pluging ! :tada:
 
 Pretty neat, right ?
 
+### Conclusion
+
+By redirecting the traffic to my machine and by creating a webserver, I could bypass the license verification process.
+
+Feel free to create an issue to comment this post, or provide an alternative method !
 
 **Disclaimer : This post is for educational purposes ONLY. How you use this information is your responsability. I will not be held accountable for any illegal activities.**
