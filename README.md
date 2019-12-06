@@ -152,7 +152,7 @@ To better understand which requests are being made by the plugin I did a `nslook
 
 ![nslookup](./images/nslookup.png)
 
-Now I can set up Wirehsark https://www.wireshark.org/ which is a network protocol analyzer.
+Now I can set up Wireshark https://www.wireshark.org/ which is a network protocol analyzer.
 By filtering on the domain's IP address, I can see every network calls being made.
 
 I then run the script once again, to see the login dialog and the error message.
