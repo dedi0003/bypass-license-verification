@@ -29,13 +29,10 @@ JSXBIN is binary script created by ExtendScript Toolkit, a tool used to add exte
 It's like JavaScript but kind of... different and obfuscated :D !
 
 There is an awesome post about reversing JSXBIN here : https://www.scip.ch/en/?labs.20140515
-
-Unfortunaly event if you understand everything that is said in the blog post, you'd still need to "decompile" the script.
-
+Unfortunaly even if you understand everything that is said in the blog post, you'd still need to "decompile" the script.
 So I'm now looking for a JSXBIN to JSX converter.
 
 I quickly come across this github project : https://github.com/autoboosh/jsxbin-to-jsx-converter
-
 But it was since DMCA'd by Adobe https://github.com/github/dmca/blob/1dc576384cdcf2938aca792d83ad1921d30cc0ec/2016-03-11-Adobe.md
 
 But thank god we are on the internet so it didn't take me long to find a mirror of the projet (I used this one https://github.com/codecopy/jsxbin-to-jsx-converter)
@@ -60,6 +57,7 @@ It is now time to open the script :
 ![Clear script](./images/clear_script.png)
 
 Look like it's working, I can see the code !
+
 But it looked too good to be true, and ... it was.
 
 When trying to run the decoded script, After effect would throw an error to my face :
@@ -142,8 +140,10 @@ When opening the server URL, the web page has only a login form and nothing else
 ![License Box](./images/license_box.png)
 
 After few failed login:password combinaison attempts, the default https://codecanyon.net/item/licensebox-php-license-and-updates-manager/22351237 logins I decide to look at the source code of the page.
+
 Nothing very interesting here, I see that the form is protected against CSRF attacks (https://fr.wikipedia.org/wiki/Cross-site_request_forgery).
 Makes me think that a standard SQL injection won't work aswell.
+
 But I still try to be extra sure ... no luck. I need to find another way !
 
 ### Investigating the domain
