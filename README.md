@@ -24,7 +24,7 @@ Opening it in an HexEditor or anything alike didn't change a thing.
 
 But at the beginning of the file we can see `@JSXBIN@ES@2.0` ..
 
-JSXBIN is binary script created by ExtendScript Toolkit, a tool used to add extensions to Adobe Creative Suite applications.
+JSXBIN is a binary script created by ExtendScript Toolkit, a tool used to add extensions to Adobe Creative Suite applications.
 
 It's like JavaScript but kind of... different and obfuscated :smiley: !
 
