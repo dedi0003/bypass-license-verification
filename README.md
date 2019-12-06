@@ -199,7 +199,7 @@ I can create a webserver locally in my machine and receive calls from any client
 
 I chose to create a NodeJS (https://nodejs.org/) server with expressjs (https://expressjs.com/).
 
-That's to wireshark (and the decoded source code) we know the two called endpoint are `/license/api/verify` and `/license/api/check_license`.
+Thanks to wireshark (and the decoded source code) we know the two called endpoints are `/license/api/verify` and `/license/api/check_license`.
 Now we just need to listen to these endpoint and return `status: true` to act like the verification process went OK and that the user can proceed.
 
 The server code would looke like this (It actually took me a lot a of attempts to make this right, but here is the final version) :
