@@ -32,6 +32,8 @@ There is an awesome post about reversing JSXBIN here : https://www.scip.ch/en/?l
 Unfortunaly even if you understand everything that is said in the blog post, you'd still need to "decompile" the script.
 So I'm now looking for a JSXBIN to JSX converter.
 
+### Decoding
+
 I quickly come across this github project : https://github.com/autoboosh/jsxbin-to-jsx-converter
 But it was since DMCA'd by Adobe https://github.com/github/dmca/blob/1dc576384cdcf2938aca792d83ad1921d30cc0ec/2016-03-11-Adobe.md
 
@@ -130,7 +132,7 @@ function license_check(license, client) {
 
 The code is pretty simple :
 
-The client does a request to `server_url + "api/check_license"` (or `api/verify`) and expect a `status` of `true` otherwise it'll throw an error.
+The client does a request to `server_url + api/check_license` (or `api/verify`) and expect a `status` of `true` otherwise it'll throw an error.
 We can find the server_url at the top of the file : `var server_url = "http://www.marco-belli.com/license/";`
 
 When opening the server URL, the web page has only a login form and nothing else on it :
