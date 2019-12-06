@@ -37,7 +37,7 @@ So I'm now looking for a JSXBIN to JSX converter.
 I quickly come across this github project : https://github.com/autoboosh/jsxbin-to-jsx-converter
 But it was since DMCA'd by Adobe https://github.com/github/dmca/blob/1dc576384cdcf2938aca792d83ad1921d30cc0ec/2016-03-11-Adobe.md
 
-But thank god we are on the internet so it didn't take me long to find a mirror of the projet (I used this one https://github.com/codecopy/jsxbin-to-jsx-converter)
+But thank god we are on the internet so it didn't take me long to find a mirror of the project (I used this one https://github.com/codecopy/jsxbin-to-jsx-converter)
 
 Now the painfull part... I needed to compile this project. :sleeping:
 
@@ -135,7 +135,7 @@ The code is pretty simple :
 The client does a request to `server_url + api/check_license` (or `api/verify`) and expect a `status` of `true` otherwise it'll throw an error.
 We can find the server_url at the top of the file : `var server_url = "http://www.marco-belli.com/license/";`
 
-When opening the server URL, the web page has only a login form and nothing else on it :
+When opening the server URL, the web page only has a login form and nothing else in it :
 
 ![License Box](./images/license_box.png)
 
@@ -152,10 +152,10 @@ To better understand which requests are being made by the plugin I did a `nslook
 
 ![nslookup](./images/nslookup.png)
 
-Now I can set up Wireshark https://www.wireshark.org/ which is a network protocol analyzer.
+I can then set up Wireshark https://www.wireshark.org/ which is a network protocol analyzer.
 By filtering on the domain's IP address, I can see every network calls being made.
 
-I then run the script once again, to see the login dialog and the error message.
+I then run the After Effect script once again, to see the login dialog and the error message.
 This is the wireshark result :
 
 ![wireshark](./images/wireshark.png)
