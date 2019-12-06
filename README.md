@@ -23,19 +23,25 @@ And here is what it looks like ...
 Opening it in an HexEditor or anything alike didn't change a thing.
 
 But at the beginning of the file we can see `@JSXBIN@ES@2.0` ..
+
 JSXBIN is binary script created by ExtendScript Toolkit, a tool used to add extensions to Adobe Creative Suite applications.
+
 It's like JavaScript but kind of... different and obfuscated :D !
 
 There is an awesome post about reversing JSXBIN here : https://www.scip.ch/en/?labs.20140515
+
 Unfortunaly event if you understand everything that is said in the blog post, you'd still need to "decompile" the script.
 
 So I'm now looking for a JSXBIN to JSX converter.
+
 I quickly come across this github project : https://github.com/autoboosh/jsxbin-to-jsx-converter
+
 But it was since DMCA'd by Adobe https://github.com/github/dmca/blob/1dc576384cdcf2938aca792d83ad1921d30cc0ec/2016-03-11-Adobe.md
 
 But thank god we are on the internet so it didn't take me long to find a mirror of the projet (I used this one https://github.com/codecopy/jsxbin-to-jsx-converter)
 
 Now the painfull part ... I needed to compile this project.
+
 After few tries with VSCode and installing a million different versions of .NET I finally surrendered and downloaded Visual Studio.
 
 https://visualstudio.microsoft.com/vs/
