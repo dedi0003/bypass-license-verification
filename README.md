@@ -1,5 +1,6 @@
 # bypass-license-verification
-How I bypassed a license check verification for an After Effect plugin
+
+### Intro
 
 A little story about an Affect Effet plugin protected behind a license code check.
 First of all, I won't provide any link to the AE project nor the place where I found the sources for obvious TOS reason.
@@ -7,15 +8,17 @@ First of all, I won't provide any link to the AE project nor the place where I f
 The idea is simple : I downloaded an After effect plugin which included a script to generate "locators" on a flat map.
 A little PNG plane could then navigate automatically following a path between the locators.
 
-The problem is : You need to pay to use this pluguin, and there is a license verification dialog when you try to use it.
+The problem is : You need to pay to use this plugin, and there is a license verification dialog when you try to use it.
 
 ![License check](./images/license_check.png)
 ![License error](./images/license_error.png)
 
+### JSXBIN
+
 So I decided to take a look at the script code to understand what was going on and if I could "bypass" the verification.
 And here is what it looks like ...
 
-![Encrypted script](./images/encrypted_scrit.png)
+![Encrypted script](./images/encrypted_script.png)
 
 Opening it in an HexEditor or anything alike didn't change a thing.
 
@@ -56,6 +59,8 @@ But it looked too good to be true, and ... it was.
 When trying to run the decoded script, After effect would throw an error to my face :
 
 ![Error clear script](./images/error_clear_script.png)
+
+### Looking at the sources
 
 Indeed, when looking closer at the decoded sources, some part could not be properly decrypted :
 
@@ -135,6 +140,8 @@ Nothing very interesting here, I see that the form is protected against CSRF att
 Makes me think that a standard SQL injection won't work aswell.
 But I still try to be extra sure ... no luck. I need to find another way !
 
+### Investigating the domain
+
 To better understand which requests are being made by the plugin I did a `nslookup` to get the IP address :
 
 ![nslookup](./images/nslookup.png)
@@ -176,6 +183,8 @@ Now back to running the After Effect script :
 
 I don't see the login dialog anymore ! But I'm still not getting in, I guess when the server cannot be contacted it acts as a failure (it makes sense, as going offline would easily bypass the license check)
 But at least I am making progress !
+
+### Local server
 
 Now why don't we host our own server ?
 Basically I can create a webserver locally in my machine and receive calls from any clients (including the script).
@@ -226,4 +235,4 @@ And I'm in ! No more dialog, no more login form, just the fully working pluging 
 Pretty neat, right ?
 
 
-Disclaimer : This post is for educational purposes ONLY. How you use this information is your responsability. I will not be held accountable for any illegal activities.
+**Disclaimer : This post is for educational purposes ONLY. How you use this information is your responsability. I will not be held accountable for any illegal activities.**
