@@ -245,7 +245,7 @@ Pretty neat, right ?
 
 ### Conclusion
 
-By redirecting the traffic to my machine and by creating a webserver, I could bypass the license verification process.
+By redirecting the traffic to my machine and by creating a webserver, I could easily bypass the license verification process.
 
 Feel free to create an issue to comment this post, or provide an alternative method !
 
