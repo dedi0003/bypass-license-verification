@@ -74,7 +74,7 @@ Even thought it was not perfect, it still allowed me to better understand how th
 By searching the license validation error that I encoutered earlier I came across those 2 functions :
 
 
-```
+```js
 function license_verify(license, client) {
     var data = $http({
         method: "POST",
