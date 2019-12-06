@@ -9,13 +9,13 @@ A little PNG plane could then navigate automatically following a path between th
 
 The problem is : You need to pay to use this pluguin, and there is a license verification dialog when you try to use it.
 
-[License check](./license_check.png)
-[License error](./license_error.png)
+![License check](./images/license_check.png)
+![License error](./images/license_error.png)
 
 So I decided to take a look at the script code to understand what was going on and if I could "bypass" the verification.
 And here is what it looks like ...
 
-[Encrypted script](./encrypted_scrit.png)
+![Encrypted script](./images/encrypted_scrit.png)
 
 Opening it in an HexEditor or anything alike didn't change a thing.
 
@@ -44,22 +44,22 @@ The program is fairly simple to run. Just write this command :
 
 And in only few seconds : 
 
-[Decoded script](./decoded_script.png)
+![Decoded script](./images/decoded_script.png)
 
 It is now time to open the script :
 
-[Clear script](./clear_script.png)
+![Clear script](./images/clear_script.png)
 
 Look like it's working, I can see the code !
 But it looked too good to be true, and ... it was.
 
 When trying to run the decoded script, After effect would throw an error to my face :
 
-[Error clear script](./error_clear_script.png)
+![Error clear script](./images/error_clear_script.png)
 
 Indeed, when looking closer at the decoded sources, some part could not be properly decrypted :
 
-[This doesn't mean anything](./gibberish.png)
+![This doesn't mean anything](./images/gibberish.png)
 
 Even thought it was not perfect, it still allowed me to better understand how the script worked.
 By searching the license validation error that I encoutered earlier I came across those 2 functions :
@@ -128,7 +128,7 @@ We can find the server_url at the top of the file : `var server_url = "http://ww
 
 When opening the server URL, the web page has only a login form and nothing else on it :
 
-[License Box](./license_box.png)
+![License Box](./images/license_box.png)
 
 After few failed login:password combinaison attempts, the default https://codecanyon.net/item/licensebox-php-license-and-updates-manager/22351237 logins I decide to look at the source code of the page.
 Nothing very interesting here, I see that the form is protected against CSRF attacks (https://fr.wikipedia.org/wiki/Cross-site_request_forgery).
@@ -137,7 +137,7 @@ But I still try to be extra sure ... no luck. I need to find another way !
 
 To better understand which requests are being made by the plugin I did a `nslookup` to get the IP address :
 
-[nslookup](./nslookup.png)
+![nslookup](./images/nslookup.png)
 
 Now I can set up Wirehsark https://www.wireshark.org/ which is a network protocol analyzer.
 By filtering on the domain's IP address, I can see every network calls being made.
@@ -145,7 +145,7 @@ By filtering on the domain's IP address, I can see every network calls being mad
 I then run the script once again, to see the login dialog and the error message.
 This is the wireshark result :
 
-[wireshark](./wireshark.png)
+![wireshark](./images/wireshark.png)
 
 As we can see the 2 functions that we saw earlier are both called.
 Now I'm thinking ... what if I can "mimic" the server, what if I could return `true` whenever I wanted?
@@ -155,7 +155,7 @@ I originaly thought I would do something like a MITM https://en.wikipedia.org/wi
 In windows the `hosts` file is used to map hostnames to IP addresses. It is located under `C:\Windows\System32\drivers\etc`
 You can open it in plain text with notepad (make sure you have administrator rights)
 
-[fresh hosts](./fresh_hosts.png)
+![fresh hosts](./images/fresh_hosts.png)
 
 It looks like this : On the left you have the IP adress that you want to be redirected on, and on the right the domain.
 Here I want to redirect the license verification server to my own machine, so I'm doing :
@@ -172,7 +172,7 @@ Just save the file and the changes will be immediatly live.
 
 Now back to running the After Effect script :
 
-[Can't connect](./cant_connect.png)
+![Can't connect](./images/cant_connect.png)
 
 I don't see the login dialog anymore ! But I'm still not getting in, I guess when the server cannot be contacted it acts as a failure (it makes sense, as going offline would easily bypass the license check)
 But at least I am making progress !
@@ -213,13 +213,13 @@ Firing up the server with `node server.js` ...
 
 I'm now running the script for the 4th time and ...
 
-[Server is called](./endpoint_called.png)
+![Server is called](./images/endpoint_called.png)
 
 The server I created was called and the endpoint returned what I asked it to return !
 
 In fact, only `check_license` was called, it didn't even need to call `verify`
 
-[I'm in](./final.png)
+![I'm in](./images/final.png)
 
 And I'm in ! No more dialog, no more login form, just the fully working pluging !
 
