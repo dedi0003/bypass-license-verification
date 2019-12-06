@@ -104,7 +104,7 @@ function license_verify(license, client) {
 
 and 
 
-```
+```js
 function license_check(license, client) {
     var data = $http({
         method: "POST",
@@ -204,7 +204,7 @@ Now we just need to listen to these endpoint and return `status: true` to act li
 
 The server code would looke like this (It actually took me a lot a of attempts to make this right, but here is the final version) :
 
-```
+```js
 const express = require('express')
 const app = express()
 
