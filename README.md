@@ -5,8 +5,8 @@
 A little story about an Affect Effect plugin protected behind a license code check.
 First of all, I won't provide any link to the AE project nor the place where I found the sources for obvious TOS reason.
 
-The idea is simple : I downloaded an After effect plugin which included a script to generate "locators" on a flat map.
-A little PNG plane could then navigate automatically following a path between the locators.
+The idea is simple : I downloaded an After effect plugin which included a script to generate "pin point marker" on a flat map.
+A little PNG plane could then navigate automatically following a path between the markers.
 
 The problem is : You need to pay to use this plugin, and there is a license verification dialog when you try to use it.
 
