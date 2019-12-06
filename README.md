@@ -188,7 +188,8 @@ Now back to running the After Effect script :
 
 ![Can't connect](./images/cant_connect.png)
 
-I don't see the login dialog anymore ! But I'm still not getting in, I guess when the server cannot be contacted it acts as a failure (it makes sense, as going offline would easily bypass the license check)
+I don't see the login dialog anymore ! But I'm still not getting in, I guess when the server cannot be contacted it acts as a failure (it makes sense, as going offline would easily bypass the license check).
+
 But at least I am making progress !
 
 ### Local server
