@@ -165,7 +165,8 @@ Now I'm thinking ... what if I can "mimic" the server, what if I could return `t
 
 I originaly thought I would do something like a MITM https://en.wikipedia.org/wiki/Man-in-the-middle_attack but since I only need to redirect the traffic on my computer I could just do the trick with the DNS resolver !
 
-In windows the `hosts` file is used to map hostnames to IP addresses. It is located under `C:\Windows\System32\drivers\etc`
+In windows the `hosts` file is used to map hostnames to IP addresses. It is located under `C:\Windows\System32\drivers\etc`.
+
 You can open it in plain text with notepad (make sure you have administrator rights)
 
 ![fresh hosts](./images/fresh_hosts.png)
