@@ -28,7 +28,7 @@ JSXBIN is binary script created by ExtendScript Toolkit, a tool used to add exte
 
 It's like JavaScript but kind of... different and obfuscated :smiley: !
 
-There is an awesome post about reversing JSXBIN here : https://www.scip.ch/en/?labs.20140515
+There is an awesome post about reversing JSXBIN here : https://www.scip.ch/en/?labs.20140515.
 Unfortunaly even if you understand everything that is said in the blog post, you'd still need to "decompile" the script.
 So I'm now looking for a JSXBIN to JSX converter.
 
