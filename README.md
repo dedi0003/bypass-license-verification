@@ -37,7 +37,7 @@ So I'm now looking for a JSXBIN to JSX converter.
 I quickly came across this github project : https://github.com/autoboosh/jsxbin-to-jsx-converter
 But it was since DMCA'd by Adobe https://github.com/github/dmca/blob/1dc576384cdcf2938aca792d83ad1921d30cc0ec/2016-03-11-Adobe.md
 
-But thank god we are on the internet so it didn't take me long to find a mirror of the project (I used this one https://github.com/codecopy/jsxbin-to-jsx-converter)
+But thank god we are on the internet so it didn't take me long to find a mirror of the project.
 
 Now the painful part... I needed to compile this project. :sleeping:
 
