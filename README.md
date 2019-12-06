@@ -195,7 +195,7 @@ But at least I am making progress !
 ### Local server
 
 Now why don't we host our own server ?
-Basically I can create a webserver locally in my machine and receive calls from any clients (including the script).
+I can create a webserver locally in my machine and receive calls from any clients (including the script).
 
 I chose to create a NodeJS (https://nodejs.org/) server with expressjs (https://expressjs.com/).
 
