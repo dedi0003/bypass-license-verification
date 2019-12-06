@@ -39,16 +39,16 @@ But it was since DMCA'd by Adobe https://github.com/github/dmca/blob/1dc576384cd
 
 But thank god we are on the internet so it didn't take me long to find a mirror of the project (I used this one https://github.com/codecopy/jsxbin-to-jsx-converter)
 
-Now the painfull part... I needed to compile this project. :sleeping:
+Now the painful part... I needed to compile this project. :sleeping:
 
-After few tries with VSCode and installing a million different versions of .NET I finally surrendered and downloaded Visual Studio https://visualstudio.microsoft.com/vs/.
+After a few tries with VSCode and installing a million different versions of .NET I finally surrendered and downloaded Visual Studio https://visualstudio.microsoft.com/vs/.
 
 20Go and few hours later I am finally able to compile the project !
 
 The program is fairly simple to run. Just write this command :
 `jsxbin_to_jsx encodedInput.jsxbin decodedOutput.jsx`
 
-And in only few seconds : 
+And within seconds : 
 
 ![Decoded script](./images/decoded_script.png)
 
@@ -56,7 +56,7 @@ It is now time to open the script :
 
 ![Clear script](./images/clear_script.png)
 
-Look like it's working, I can see the code !
+Looks like it's working, I can see the code !
 
 But it looked too good to be true, and ... it was.
 
@@ -132,17 +132,17 @@ function license_check(license, client) {
 
 The code is pretty simple :
 
-The client does a request to `server_url + api/check_license` (or `api/verify`) and expect a `status` of `true` otherwise it'll throw an error.
+The client does a request to `server_url + api/check_license` (or `api/verify`) and expects a `status` of `true` otherwise it'll throw an error.
 We can find the server_url at the top of the file : `var server_url = "http://www.marco-belli.com/license/";`
 
 When opening the server URL, the web page only has a login form and nothing else in it :
 
 ![License Box](./images/license_box.png)
 
-After few failed login:password combinaison attempts, the default https://codecanyon.net/item/licensebox-php-license-and-updates-manager/22351237 logins I decided to look at the source code of the page.
+After a few failed login:password combinaison attempts (including the default credentials provided by the plugin demo page https://codecanyon.net/item/licensebox-php-license-and-updates-manager/22351237) I decided to look at the source code of the page.
 
 Nothing very interesting here, I see that the form is protected against CSRF attacks (https://fr.wikipedia.org/wiki/Cross-site_request_forgery).
-Makes me think that a standard SQL injection won't work aswell.
+Makes me think that a standard SQL injection won't work as well.
 
 But I still try to be extra sure ... no luck. I need to find another way !
 
@@ -163,7 +163,7 @@ This is the wireshark result :
 As we can see the 2 verification functions are both called.
 Now I'm thinking ... what if I can "mimic" the server, what if I could return `true` whenever I wanted?
 
-I originaly thought I would do something like a MITM https://en.wikipedia.org/wiki/Man-in-the-middle_attack but since I only need to redirect the traffic on my computer I could just do the trick with the DNS resolver !
+I originally thought I would do something like a MITM https://en.wikipedia.org/wiki/Man-in-the-middle_attack but since I only needed to redirect the traffic on my computer I could just do the trick with the DNS resolver !
 
 In windows the `hosts` file is used to map hostnames to IP addresses. It is located under `C:\Windows\System32\drivers\etc`.
 
@@ -171,7 +171,7 @@ You can open it in plain text with notepad (make sure you have administrator rig
 
 ![fresh hosts](./images/fresh_hosts.png)
 
-It looks like this : On the left you have the IP adress that you want to be redirected on, and on the right the domain.
+It looks like this : On the left you have the IP address that you want to be redirected on, and on the right the domain.
 Here I want to redirect the license verification server to my own machine, so I'm doing :
 
 
@@ -182,7 +182,7 @@ Here I want to redirect the license verification server to my own machine, so I'
 127.0.0.1 www.marco-belli.com
 ```
 
-Just save the file and the changes will be immediatly live.
+Just save the file and the changes will be immediately live.
 
 Now back to running the After Effect script :
 
@@ -195,14 +195,14 @@ But at least I am making progress !
 ### Local server
 
 Now why don't we host our own server ?
-I can create a webserver locally in my machine and receive calls from any clients (including the script).
+I can create a webserver locally on my machine and receive calls from any clients (including the script).
 
 I chose to create a NodeJS (https://nodejs.org/) server with expressjs (https://expressjs.com/).
 
 Thanks to wireshark (and the decoded source code) we know the two called endpoints are `/license/api/verify` and `/license/api/check_license`.
-Now we just need to listen to these endpoint and return `status: true` to act like the verification process went OK and that the user can proceed.
+Now we just need to listen to these endpoints and return `status: true` to act like the verification process went OK and that the user can proceed.
 
-The server code would looke like this (It actually took me a lot a of attempts to make this right, but here is the final version) :
+The server code would look like this (It actually took me a lot of attempts to make this right, but here is the final version) :
 
 ```js
 const express = require('express')
