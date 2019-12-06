@@ -139,7 +139,7 @@ When opening the server URL, the web page has only a login form and nothing else
 
 ![License Box](./images/license_box.png)
 
-After few failed login:password combinaison attempts, the default https://codecanyon.net/item/licensebox-php-license-and-updates-manager/22351237 logins I decide to look at the source code of the page.
+After few failed login:password combinaison attempts, the default https://codecanyon.net/item/licensebox-php-license-and-updates-manager/22351237 logins I decided to look at the source code of the page.
 
 Nothing very interesting here, I see that the form is protected against CSRF attacks (https://fr.wikipedia.org/wiki/Cross-site_request_forgery).
 Makes me think that a standard SQL injection won't work aswell.
