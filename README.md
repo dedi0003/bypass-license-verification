@@ -160,7 +160,7 @@ This is the wireshark result :
 
 ![wireshark](./images/wireshark.png)
 
-As we can see the 2 functions that we saw earlier are both called.
+As we can see the 2 verification functions are both called.
 Now I'm thinking ... what if I can "mimic" the server, what if I could return `true` whenever I wanted?
 
 I originaly thought I would do something like a MITM https://en.wikipedia.org/wiki/Man-in-the-middle_attack but since I only what to redirect the traffic on my computer I could just do the trick with the DNS resolver !
